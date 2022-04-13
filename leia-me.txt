@@ -1,0 +1,41 @@
+-Programa em python para verificar cpf
+
+-O programa opera por meio de certas verificações de invalidez e calculos para verificar o cpf.
+
+
+	todos os cpf's contem 11 digitos, sendo os dois ultimos os "digitos verificadores", que, evidentemente
+	precisamos verificar por meio de calculos.
+
+	para o primeiro digito verificador, precisamos multiplicar os 9 primeiros digitos por constantes predeterminadas, 
+	que são, respectivamente 10 a 2 em ordem descrescente, ou seja:
+	
+	1  2 3 4 5 6 7 8 9 / ? ?
+	x  x x x x x x x x 	
+	10 9 8 7 6 5 4 3 2
+	
+	depois, precisamos somar todos os resultados e multiplicar o resultado final por 10.
+	logo após, dividiremos o resultado por 11 e precisamos obter o RESTO dessa multiplicação, onde o resto tem 	
+	que coincidir com o primeiro digito verificador.
+	
+	
+	para o segundo digito verificador, repetiremos o processo, porém, com as constantes de 11 a 2 e incluindo 
+	o primeiro digito verificador, ou seja:
+
+	1  2  3 4 5 6 7 8 9 / ? ?
+	x  x  x x x x x x x   x
+	11 10 9 8 7 6 5 4 3   2
+
+	e o mesmo procedimento é feito, multiplicamos por 10 e obtemos o resto da divisão por 11
+	este resultado precisa coincidir com o ultimo digito verificador
+
+	caso ambos os calculos coincidam, o cpf é válido, porém:
+
+	-Não podemos ter cpf's com todos os numeros repetidos, como "11111111111". já que estes modelos de cpf's
+	conseguem passar em ambas verificações mesmo sendo inválidos.
+	-Caso o resto da divisão seja 10, ele é considerado como 0.
+
+
+
+
+
+
